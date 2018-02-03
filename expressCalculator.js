@@ -1,9 +1,7 @@
-// Dependencies
-var express = require("express");
-var bodyParser = require("body-parser");
-var path = require('path');
-// Create express app instance.
-var app = express();
+const express = require("express");
+const bodyParser = require("body-parser");
+const path = require('path');
+const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -11,20 +9,18 @@ app.use(bodyParser.json());
 const PORT = process.env.PORT || 8080;
 
 // Routes
-// What routes do you need to have? Which ones are optional?
-// TODO Add your routes here
 app.get("/:operation/:num_one/:num_two", function(req, res) {
 
-  // TODO parse out the variables from the request
+  // parse out the variables from the request
   // Parameters are received from the URL
   let operation = req.params.operation;
   let num_one = parseInt(req.params.num_one);
   let num_two = parseInt(req.params.num_two);
-  // TODO make sure they're converted to integers (and not strings)
+
   // Parameters are converted to integers
 
   // Initialize the result variable to send later
-  var result;
+  let result;
   // Switch statement chooses operation based on the operation parameter.
   switch (operation) {
     case "add":
