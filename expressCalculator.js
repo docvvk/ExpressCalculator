@@ -27,7 +27,6 @@ app.get("/:operation/:num_one/:num_two", function(req, res) {
   var result;
   // Switch statement chooses operation based on the operation parameter.
   switch (operation) {
-    // BONUS - How could you use * + etc. inside the app.get()?
     case "add":
       // Add your logic here. Pun intended.
       result = num_one + num_two;
